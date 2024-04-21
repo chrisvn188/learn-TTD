@@ -1,17 +1,30 @@
 import capitalize from './capitalize'
 
-test('hello world to Hello World', () => {
-  expect(capitalize('hello world')).toBe('Hello World')
-})
+const testCases = [
+  {
+    name: 'hello world to Hello World',
+    input: 'hello world',
+    expected: 'Hello World',
+  },
+  {
+    name: 'bye world to Bye World',
+    input: 'bye world',
+    expected: 'Bye World',
+  },
+  {
+    name: 'GrEat to Great',
+    input: 'GrEat',
+    expected: 'Great',
+  },
+  {
+    name: 'haha to Haha',
+    input: 'haha',
+    expected: 'Haha',
+  },
+]
 
-test('bye world to Bye World', () => {
-  expect(capitalize('bye world')).toBe('Bye World')
-})
-
-test('GrEat to Great', () => {
-  expect(capitalize('GrEat')).toBe('Great')
-})
-
-test('haha to Haha', () => {
-  expect(capitalize('haha')).toBe('Haha')
+testCases.forEach(({ name, input, expected }) => {
+  test(name, () => {
+    expect(capitalize(input)).toBe(expected)
+  })
 })

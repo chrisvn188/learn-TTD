@@ -1,13 +1,25 @@
 import reverseString from './reverseString'
 
-test('reverse hello to olleh', () => {
-  expect(reverseString('hello')).toBe('olleh')
-})
+const testCases = [
+  {
+    name: 'reverse hello to olleh',
+    input: 'hello',
+    expected: 'olleh',
+  },
+  {
+    name: 'reverse Great to taerG',
+    input: 'Great',
+    expected: 'taerG',
+  },
+  {
+    name: '102 to 201',
+    input: '102',
+    expected: '201',
+  },
+]
 
-test('reverse Great to taerG', () => {
-  expect(reverseString('Great')).toBe('taerG')
-})
-
-test('102 to 201', () => {
-  expect(reverseString('102')).toBe('201')
+testCases.forEach(({ name, input, expected }) => {
+  test(name, () => {
+    expect(reverseString(input)).toBe(expected)
+  })
 })
