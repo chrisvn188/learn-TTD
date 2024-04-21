@@ -31,10 +31,34 @@ const testCases = [
     input: 'hello 1.#.abc',
     expected: 'Hello 1.#.abc',
   },
+  {
+    name: 'Inputs are not valid string',
+    input: 123,
+    expected: 'Invalid String Input',
+  },
+
+  {
+    name: 'Inputs are not valid string',
+    input: [],
+    expected: 'Invalid String Input',
+  },
+
+  {
+    name: 'Inputs are not valid string',
+    input: {},
+    expected: 'Invalid String Input',
+  },
+
+  {
+    name: 'Inputs are not valid string',
+    input: function () {},
+    expected: 'Invalid String Input',
+  },
 ]
 
 testCases.forEach(({ name, input, expected }) => {
   test(name, () => {
-    expect(capitalize(input)).toBe(expected)
+    if (typeof input === 'string') expect(capitalize(input)).toBe(expected)
+    else expect(() => capitalize(input)).toThrow(expected)
   })
 })

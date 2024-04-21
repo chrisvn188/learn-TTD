@@ -1,5 +1,6 @@
-const capitalize = (string) => {
-  return string
+const capitalize = (input) => {
+  if (typeof input !== 'string') throw new Error('Invalid String Input')
+  return input
     .split(' ')
     .map((word) =>
       word
