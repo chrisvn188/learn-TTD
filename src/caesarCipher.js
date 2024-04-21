@@ -11,17 +11,19 @@ function makeRange(from, to) {
 }
 
 function checkUpperCaseAlphabet(letter) {
+  // uppercase letter start from A (ascii_code: 65) - Z (ascii_code: 90)
   const uppercaseLetterCodes = makeRange(65, 90)
   return uppercaseLetterCodes.includes(letter.charCodeAt())
 }
 
 function checkLowerCaseAlphabet(letter) {
+  // lowercase letter start from a (ascii_code: 97) - a (ascii_code: 122)
   const lowercaseLetterCodes = makeRange(97, 122)
   return lowercaseLetterCodes.includes(letter.charCodeAt())
 }
 
 export default function caesarCipher(input, factor) {
-  // from a-z or A-Z, we have 26 letters
+  // we have 26 alphabet letters a-z or A-Z
   const NUMBER_OF_ALPHABET_LETTERS = 26
 
   if (typeof input !== 'string') throw new Error('Invalid String Input')
