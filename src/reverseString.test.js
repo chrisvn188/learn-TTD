@@ -16,10 +16,16 @@ const testCases = [
     input: '102',
     expected: '201',
   },
+  {
+    name: 'Not valid string input',
+    input: 123,
+    expected: 'Invalid String Input',
+  },
 ]
 
 testCases.forEach(({ name, input, expected }) => {
   test(name, () => {
-    expect(reverseString(input)).toBe(expected)
+    if (typeof input === 'string') expect(reverseString(input)).toBe(expected)
+    else expect(() => reverseString(input)).toThrow(expected)
   })
 })
