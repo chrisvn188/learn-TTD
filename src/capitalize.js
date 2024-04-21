@@ -1,13 +1,15 @@
 const capitalize = (string) => {
   return string
-    .trim()
     .split(' ')
     .map((word) =>
       word
         .toLowerCase()
         .split('')
         .map((char, index) => {
-          if (index === 0) return char.toUpperCase()
+          // 65 represents "A", 90 represents "Z"
+          // 97 represents "a", 122 represents "z"
+          if (index === 0 && (65 < char < 90 || 97 < char < 122))
+            return char.toUpperCase()
           return char
         })
         .join('')
