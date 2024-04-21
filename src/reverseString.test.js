@@ -21,6 +21,21 @@ const testCases = [
     input: 123,
     expected: 'Invalid String Input',
   },
+  {
+    name: 'Not valid string input',
+    input: [],
+    expected: 'Invalid String Input',
+  },
+  {
+    name: 'Not valid string input',
+    input: {},
+    expected: 'Invalid String Input',
+  },
+  {
+    name: 'Not valid string input',
+    input: function () {},
+    expected: 'Invalid String Input',
+  },
 ]
 
 testCases.forEach(({ name, input, expected }) => {

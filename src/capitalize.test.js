@@ -28,8 +28,8 @@ const testCases = [
   },
   {
     name: 'Input starts with characters that are not in alphabet',
-    input: 'hello 1.#.abc',
-    expected: 'Hello 1.#.abc',
+    input: '1hello 1.#.abc',
+    expected: '1hello 1.#.abc',
   },
   {
     name: 'Inputs are not valid string',
@@ -38,21 +38,36 @@ const testCases = [
   },
 
   {
-    name: 'Inputs are not valid string',
+    name: 'Array input',
     input: [],
     expected: 'Invalid String Input',
   },
 
   {
-    name: 'Inputs are not valid string',
+    name: 'Object Input',
     input: {},
     expected: 'Invalid String Input',
   },
 
   {
-    name: 'Inputs are not valid string',
+    name: 'Function input',
     input: function () {},
     expected: 'Invalid String Input',
+  },
+  {
+    name: 'Undefined Input',
+    input: undefined,
+    expected: 'Invalid String Input',
+  },
+  {
+    name: 'Null input',
+    input: undefined,
+    expected: 'Invalid String Input',
+  },
+  {
+    name: 'Empty string input',
+    input: '',
+    expected: '',
   },
 ]
 
