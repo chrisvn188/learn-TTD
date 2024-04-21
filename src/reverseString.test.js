@@ -22,17 +22,17 @@ const testCases = [
     expected: 'Invalid String Input',
   },
   {
-    name: 'Not valid string input',
+    name: 'Array input',
     input: [],
     expected: 'Invalid String Input',
   },
   {
-    name: 'Not valid string input',
+    name: 'Object input',
     input: {},
     expected: 'Invalid String Input',
   },
   {
-    name: 'Not valid string input',
+    name: 'Function input',
     input: function () {},
     expected: 'Invalid String Input',
   },
